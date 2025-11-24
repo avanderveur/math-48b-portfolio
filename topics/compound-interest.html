@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compound Interest (Discrete) | Math 48B Portfolio</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/compound-interest.css" />
+</head>
+<body>
+
+  <header class="topic-header">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </header>
+
+  <section class="topic-hero">
+    <h1>Compound Interest (Discrete)</h1>
+    <p class="topic-subtitle">
+      Discrete compound interest models money growing by repeated multiplication at regular intervals.
+    </p>
+  </section>
+
+  <!-- =========================
+       FORMULA + KEY IDEAS
+  ========================== -->
+  <section class="topic-section">
+    <h2>Compound Interest Formula</h2>
+    <p>An account with discrete compounding grows by:</p>
+
+    <div class="definition-box mono">
+      A(t) = P(1 + r/n)<sup>nt</sup>
+    </div>
+
+    <div class="steps-container">
+      <div class="step-box">
+        <div class="step-num mono">P</div>
+        <p>Principal (starting amount)</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num mono">r</div>
+        <p>Annual interest rate (decimal)</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num mono">n</div>
+        <p>Compounds per year (monthly=12, quarterly=4)</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num mono">t</div>
+        <p>Time in years</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num mono">A(t)</div>
+        <p>Amount after t years</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic-section">
+    <h2>Repeated Multiplication Meaning</h2>
+    <p>Every compounding period multiplies the money by a growth factor.</p>
+
+    <div class="definition-box mono">
+      Growth factor = (1 + r/n)
+    </div>
+
+    <p class="muted center-note">
+      Then we apply that factor <strong>nt</strong> times.
+    </p>
+  </section>
+
+
+  <!-- =====================================================
+       EXAMPLE 1
+       P=2000, r=0.05, n=12, t=4
+  ====================================================== -->
+  <section class="topic-section">
+    <h2>Example 1 (Animated + Real Graph)</h2>
+
+    <div class="example-problem mono">
+      P = 2000, r = 0.05, n = 12, t = 4
+    </div>
+
+    <div class="demo-shell">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="ci1StepText">Press Next or Play to start.</div>
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="ci1Prev">Back</button>
+          <button class="btn primary" id="ci1Next">Next</button>
+          <button class="btn ghost" id="ci1Play">Play</button>
+          <button class="btn ghost" id="ci1Reset">Reset</button>
+        </div>
+      </div>
+
+      <!-- algebra panel -->
+      <div class="factor-stage">
+        <div class="factor-row mono">
+          A(t) =
+          <span id="ci1Formula" class="factor-piece">2000(1 + 0.05/12)<sup>12·4</sup></span>
+        </div>
+        <div class="factor-row mono">
+          Growth factor =
+          <span id="ci1Factor" class="factor-piece">(1.0041667)</span>
+        </div>
+        <div class="factor-row mono">
+          Exponent =
+          <span id="ci1Exp" class="factor-piece">48</span>
+        </div>
+      </div>
+
+      <!-- value table -->
+      <div class="table-stage mono">
+        <div class="value-table">
+          <div class="row header">
+            <div>t (years)</div><div>A(t)</div>
+          </div>
+          <div class="row hidden-line" id="ci1r0"><div>0</div><div id="ci1v0"></div></div>
+          <div class="row hidden-line" id="ci1r1"><div>1</div><div id="ci1v1"></div></div>
+          <div class="row hidden-line" id="ci1r2"><div>2</div><div id="ci1v2"></div></div>
+          <div class="row hidden-line" id="ci1r3"><div>3</div><div id="ci1v3"></div></div>
+          <div class="row hidden-line" id="ci1r4"><div>4</div><div id="ci1v4"></div></div>
+        </div>
+      </div>
+
+      <!-- graph -->
+      <div class="graph-stage">
+        <svg id="ci1Graph" viewBox="0 0 640 360" width="100%" height="360" role="img" aria-label="Compound interest graph example 1">
+          <!-- plot groups (filled by JS) -->
+          <g id="ci1Grid" class="hidden-line"></g>
+          <g id="ci1Axes" class="hidden-line"></g>
+          <g id="ci1Ticks" class="hidden-line"></g>
+
+          <path id="ci1Curve" class="curve hidden-line" d=""></path>
+          <g id="ci1Points" class="hidden-line"></g>
+        </svg>
+      </div>
+
+      <div id="ci1Result" class="result-area"></div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       EXAMPLE 2
+       P=5000, r=0.08, n=4, t=6
+  ====================================================== -->
+  <section class="topic-section">
+    <h2>Example 2 (Animated + Real Graph)</h2>
+
+    <div class="example-problem mono">
+      P = 5000, r = 0.08, n = 4, t = 6
+    </div>
+
+    <div class="demo-shell demo-shell-2">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="ci2StepText">Press Next or Play to start.</div>
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="ci2Prev">Back</button>
+          <button class="btn primary" id="ci2Next">Next</button>
+          <button class="btn ghost" id="ci2Play">Play</button>
+          <button class="btn ghost" id="ci2Reset">Reset</button>
+        </div>
+      </div>
+
+      <div class="factor-stage">
+        <div class="factor-row mono">
+          A(t) =
+          <span id="ci2Formula" class="factor-piece">5000(1 + 0.08/4)<sup>4·6</sup></span>
+        </div>
+        <div class="factor-row mono">
+          Growth factor =
+          <span id="ci2Factor" class="factor-piece">(1.02)</span>
+        </div>
+        <div class="factor-row mono">
+          Exponent =
+          <span id="ci2Exp" class="factor-piece">24</span>
+        </div>
+      </div>
+
+      <div class="table-stage mono">
+        <div class="value-table">
+          <div class="row header">
+            <div>t (years)</div><div>A(t)</div>
+          </div>
+          <div class="row hidden-line" id="ci2r0"><div>0</div><div id="ci2v0"></div></div>
+          <div class="row hidden-line" id="ci2r2"><div>2</div><div id="ci2v2"></div></div>
+          <div class="row hidden-line" id="ci2r4"><div>4</div><div id="ci2v4"></div></div>
+          <div class="row hidden-line" id="ci2r6"><div>6</div><div id="ci2v6"></div></div>
+        </div>
+      </div>
+
+      <div class="graph-stage">
+        <svg id="ci2Graph" viewBox="0 0 640 360" width="100%" height="360" role="img" aria-label="Compound interest graph example 2">
+          <g id="ci2Grid" class="hidden-line"></g>
+          <g id="ci2Axes" class="hidden-line"></g>
+          <g id="ci2Ticks" class="hidden-line"></g>
+
+          <path id="ci2Curve" class="curve hidden-line" d=""></path>
+          <g id="ci2Points" class="hidden-line"></g>
+        </svg>
+      </div>
+
+      <div id="ci2Result" class="result-area"></div>
+    </div>
+  </section>
+
+
+  <section class="topic-section">
+    <h2>Summary</h2>
+    <p>
+      Discrete compound interest grows exponentially by repeated multiplication of the growth factor.
+      The more frequent the compounding, the faster the growth.
+    </p>
+  </section>
+
+
+  <!-- ======== TOPIC NAVIGATION (MATCHES TOPICS 1–7) ======== -->
+  <nav class="topic-nav" aria-label="Topic navigation">
+    <button class="btn ghost nav-btn" id="prevTopicBtn" type="button">← Last Topic</button>
+
+    <div></div><!-- spacer -->
+
+    <button class="btn ghost nav-btn" id="nextTopicBtn" type="button">Next Topic →</button>
+
+    <div class="nav-select-wrap">
+      <label for="topicSelect" class="muted nav-select-label">Jump to:</label>
+      <select id="topicSelect" class="select nav-select"></select>
+    </div>
+  </nav>
+
+  <footer class="topic-footer">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </footer>
+
+  <script src="../js/compound-interest.js"></script>
+  <script src="../js/topic-nav.js"></script>
+</body>
+</html>

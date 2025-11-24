@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inverse Functions | Math 48B Portfolio</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/inverses.css" />
+</head>
+<body>
+
+  <header class="topic-header">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </header>
+
+  <section class="topic-hero">
+    <h1>Inverse Functions + Reflection Over y = x</h1>
+    <p class="topic-subtitle">
+      An inverse function “undoes” the original function. Graphically, a function and its inverse
+      are mirror images across the line y = x.
+    </p>
+  </section>
+
+  <!-- =========================
+       DEFINITIONS + RULES
+  ========================== -->
+  <section class="topic-section">
+    <h2>Core Definition</h2>
+
+    <div class="definition-box mono">
+      f and f⁻¹ are inverses if:  f(f⁻¹(x)) = x  and  f⁻¹(f(x)) = x
+    </div>
+
+    <div class="steps-container">
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <p>Write y = f(x).</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <p>Swap x and y.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <p>Solve for y.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">4</div>
+        <p>Rename y as f⁻¹(x).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="topic-section">
+    <h2>Graph Meaning</h2>
+    <p>
+      If (a, b) lies on f(x), then (b, a) lies on f⁻¹(x).
+    </p>
+
+    <div class="definition-box mono">
+      Reflection line: y = x
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       EXAMPLE 1
+  ====================================================== -->
+  <section class="topic-section">
+    <h2>Example 1 (Animated + Reflection)</h2>
+
+    <div class="example-problem mono">
+      f(x) = 2x + 3
+    </div>
+
+    <div class="demo-shell">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="inv1StepText">Press Next or Play to start.</div>
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="inv1Prev">Back</button>
+          <button class="btn primary" id="inv1Next">Next</button>
+          <button class="btn ghost" id="inv1Play">Play</button>
+          <button class="btn ghost" id="inv1Reset">Reset</button>
+        </div>
+      </div>
+
+      <!-- algebra panel -->
+      <div class="factor-stage">
+        <div class="factor-row mono">
+          Start: <span id="inv1s1" class="factor-piece">y = 2x + 3</span>
+        </div>
+        <div class="factor-row mono">
+          Swap x/y: <span id="inv1s2" class="factor-piece">x = 2y + 3</span>
+        </div>
+        <div class="factor-row mono">
+          Solve for y: <span id="inv1s3" class="factor-piece">y = (x − 3)/2</span>
+        </div>
+        <div class="factor-row mono">
+          Inverse: <span id="inv1s4" class="factor-piece">f⁻¹(x) = (x − 3)/2</span>
+        </div>
+      </div>
+
+      <!-- graph -->
+      <div class="graph-stage">
+        <svg id="inv1Graph" viewBox="0 0 640 360" width="100%" height="360">
+
+          <line x1="0" y1="300" x2="640" y2="300" class="axis"/>
+          <line x1="320" y1="0" x2="320" y2="360" class="axis"/>
+
+          <line id="inv1RefLine" x1="80" y1="300" x2="560" y2="20" class="ref-line hidden-line"/>
+          <text id="inv1RefLabel" x="510" y="40" class="label hidden-line">y = x</text>
+
+          <path id="inv1CurveF" class="curve f-curve hidden-line"></path>
+          <text id="inv1LabelF" x="440" y="70" class="label hidden-line">f(x)</text>
+
+          <path id="inv1CurveInv" class="curve inv-curve hidden-line"></path>
+          <text id="inv1LabelInv" x="160" y="250" class="label hidden-line">f⁻¹(x)</text>
+
+          <circle id="inv1Pt" cx="400" cy="160" r="6" class="point hidden-line"/>
+          <text id="inv1PtLabel" x="410" y="165" class="label hidden-line">(1,5)</text>
+
+          <circle id="inv1PtRef" cx="400" cy="160" r="6" class="point ref-point hidden-line"/>
+          <text id="inv1PtRefLabel" x="410" y="155" class="label hidden-line">(5,1)</text>
+        </svg>
+      </div>
+
+      <div id="inv1Result" class="result-area"></div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       EXAMPLE 2
+  ====================================================== -->
+  <section class="topic-section">
+    <h2>Example 2 (Animated + Reflection)</h2>
+
+    <div class="example-problem mono">
+      g(x) = (x − 1)³ + 2
+    </div>
+
+    <div class="demo-shell demo-shell-2">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="inv2StepText">Press Next or Play to start.</div>
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="inv2Prev">Back</button>
+          <button class="btn primary" id="inv2Next">Next</button>
+          <button class="btn ghost" id="inv2Play">Play</button>
+          <button class="btn ghost" id="inv2Reset">Reset</button>
+        </div>
+      </div>
+
+      <div class="factor-stage">
+        <div class="factor-row mono">
+          Start: <span id="inv2s1" class="factor-piece">y = (x − 1)³ + 2</span>
+        </div>
+        <div class="factor-row mono">
+          Swap x/y: <span id="inv2s2" class="factor-piece">x = (y − 1)³ + 2</span>
+        </div>
+        <div class="factor-row mono">
+          Solve for y: <span id="inv2s3" class="factor-piece">y = ∛(x − 2) + 1</span>
+        </div>
+        <div class="factor-row mono">
+          Inverse: <span id="inv2s4" class="factor-piece">g⁻¹(x) = ∛(x − 2) + 1</span>
+        </div>
+      </div>
+
+      <!-- graph -->
+      <div class="graph-stage">
+        <svg id="inv2Graph" viewBox="0 0 640 360" width="100%" height="360">
+
+          <line x1="0" y1="300" x2="640" y2="300" class="axis"/>
+          <line x1="320" y1="0" x2="320" y2="360" class="axis"/>
+
+          <line id="inv2RefLine" x1="80" y1="300" x2="560" y2="20" class="ref-line hidden-line"/>
+          <text id="inv2RefLabel" x="510" y="40" class="label hidden-line">y = x</text>
+
+          <path id="inv2CurveF" class="curve f-curve hidden-line"></path>
+          <text id="inv2LabelF" x="470" y="90" class="label hidden-line">g(x)</text>
+
+          <path id="inv2CurveInv" class="curve inv-curve hidden-line"></path>
+          <text id="inv2LabelInv" x="120" y="245" class="label hidden-line">g⁻¹(x)</text>
+        </svg>
+      </div>
+
+      <div id="inv2Result" class="result-area"></div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       SUMMARY (PLACED ABOVE NAV)
+  ====================================================== -->
+  <section class="topic-section">
+    <h2>Summary</h2>
+    <p>
+      Inverses swap input/output. Algebraically we swap x and y then solve for y.
+      Graphically the two curves are reflections across y = x.
+    </p>
+  </section>
+
+
+  <!-- =====================================================
+       TOPIC NAVIGATION (AFTER SUMMARY)
+  ====================================================== -->
+  <nav class="topic-nav" aria-label="Topic navigation">
+    <button class="btn ghost nav-btn" id="prevTopicBtn" type="button">← Last Topic</button>
+
+    <div></div>
+
+    <button class="btn ghost nav-btn" id="nextTopicBtn" type="button">Next Topic →</button>
+
+    <div class="nav-select-wrap">
+      <label for="topicSelect" class="muted nav-select-label">Jump to:</label>
+      <select id="topicSelect" class="select nav-select"></select>
+    </div>
+  </nav>
+
+
+  <footer class="topic-footer">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </footer>
+
+  <script src="../js/inverses.js"></script>
+  <script src="../js/topic-nav.js"></script>
+</body>
+</html>

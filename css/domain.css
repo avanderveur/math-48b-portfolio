@@ -1,0 +1,105 @@
+/* =========================================================
+   domain.css — animated domain examples
+   ========================================================= */
+
+.demo-shell{
+  margin-top:14px;
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding:16px;
+  box-shadow: var(--shadow-soft);
+}
+.demo-shell-2{ margin-top:22px; }
+
+.factor-stage{
+  margin-top:8px;
+  padding:12px;
+  background: var(--bg-soft);
+  border:1px dotted var(--line);
+  border-radius: var(--radius-lg);
+}
+.factor-row{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  font-size:20px;
+  margin:6px 0;
+}
+.factor-piece{
+  font-weight:900;
+  color:var(--accent);
+  opacity:0;
+  transform: translateY(6px);
+  transition: 450ms ease;
+}
+.factor-piece.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+.numberline-stage{
+  margin-top:14px;
+  padding:10px;
+  background: var(--bg-soft);
+  border:1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+}
+
+/* number line visuals */
+.nl-line{
+  stroke: rgba(255,255,255,0.7);
+  stroke-width: 3;
+}
+.nl-tick{
+  stroke: rgba(255,255,255,0.7);
+  stroke-width: 3;
+}
+.nl-label{
+  fill: white;
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.nl-open{
+  stroke: var(--accent);
+  stroke-width: 3;
+  fill: transparent;
+  filter: drop-shadow(0 0 6px rgba(57,230,215,0.5));
+}
+
+.nl-shade{
+  fill: rgba(57,230,215,0.10);
+  stroke: rgba(57,230,215,0.35);
+  stroke-width: 1;
+  rx: 8;
+}
+
+/* reveal animation */
+.hidden-line{
+  opacity:0;
+  transform: translateY(6px);
+}
+.shown-line{
+  opacity:1 !important;
+  transform: translateY(0) !important;
+  transition: 450ms ease;
+}
+
+/* stepper */
+.stepper-ui{ margin-bottom:12px; }
+.step-text{
+  font-size:16px;
+  padding:12px;
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  border:1px solid var(--line);
+  min-height:52px;
+}
+.stepper-buttons{
+  margin-top:10px;
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+}

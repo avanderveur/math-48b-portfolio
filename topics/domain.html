@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domain of Rational Functions | Math 48B Portfolio</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/domain.css" />
+</head>
+
+<body>
+
+  <header class="topic-header">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </header>
+
+  <section class="topic-hero">
+    <h1>Domain of Rational Functions</h1>
+    <p class="topic-subtitle">
+      The domain includes all real numbers except any x-values that make the denominator equal to zero.
+    </p>
+  </section>
+
+  <!-- =========================
+       Definition + Steps
+  ========================== -->
+  <section class="topic-section">
+    <h2>Rule for Domain</h2>
+
+    <div class="definition-box">
+      <div class="formula">f(x) = P(x) / Q(x)</div>
+      Domain excludes all x where <strong>Q(x) = 0</strong>.
+    </div>
+
+    <div class="steps-container">
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <p>Factor the denominator completely.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <p>Set each factor equal to 0 and solve.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <p>Exclude those solutions from the domain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       EXAMPLE 1 (ANIMATED)
+       f(x) = 4/(x^2-9)
+  ====================================================== -->
+  <section class="topic-section">
+    <h2>Example 1 (Animated)</h2>
+
+    <div class="example-problem mono">
+      f(x) = 4 / (x² − 9)
+    </div>
+
+    <div class="demo-shell">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="dom1StepText">
+          Press Next or Play to start.
+        </div>
+
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="dom1Prev" type="button">Back</button>
+          <button class="btn primary" id="dom1Next" type="button">Next</button>
+          <button class="btn ghost" id="dom1Play" type="button">Play</button>
+          <button class="btn ghost" id="dom1Reset" type="button">Reset</button>
+        </div>
+      </div>
+
+      <!-- Visual: factoring line -->
+      <div class="factor-stage">
+        <div class="factor-row mono">
+          Denominator:
+          <span id="dom1Den" class="factor-piece">x² − 9</span>
+        </div>
+
+        <div class="factor-row mono">
+          Factored:
+          <span id="dom1Fact" class="factor-piece">(x − 3)(x + 3)</span>
+        </div>
+      </div>
+
+      <!-- Visual: number line -->
+      <div class="numberline-stage">
+        <svg id="dom1Line" viewBox="0 0 700 140" width="100%" height="140" role="img" aria-label="Domain number line example 1">
+          <line x1="40" y1="70" x2="660" y2="70" class="nl-line"/>
+
+          <g class="nl-ticks">
+            <line x1="180" y1="60" x2="180" y2="80" class="nl-tick"/>
+            <text x="168" y="100" class="nl-label">-3</text>
+
+            <line x1="520" y1="60" x2="520" y2="80" class="nl-tick"/>
+            <text x="510" y="100" class="nl-label">3</text>
+          </g>
+
+          <circle id="dom1ExA" cx="180" cy="70" r="10" class="nl-open hidden-line"/>
+          <circle id="dom1ExB" cx="520" cy="70" r="10" class="nl-open hidden-line"/>
+
+          <rect id="dom1LeftShade"  x="40" y="50" width="130" height="40" class="nl-shade hidden-line"/>
+          <rect id="dom1MidShade"   x="190" y="50" width="320" height="40" class="nl-shade hidden-line"/>
+          <rect id="dom1RightShade" x="530" y="50" width="130" height="40" class="nl-shade hidden-line"/>
+        </svg>
+      </div>
+
+      <div id="dom1Result" class="result-area"></div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       EXAMPLE 2 (ANIMATED)
+       g(x) = (x+2)/(x(x-5)(x+1))
+  ====================================================== -->
+  <section class="topic-section">
+    <h2>Example 2 (Animated)</h2>
+
+    <div class="example-problem mono">
+      g(x) = (x + 2) / (x(x − 5)(x + 1))
+    </div>
+
+    <div class="demo-shell demo-shell-2">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="dom2StepText">
+          Press Next or Play to start.
+        </div>
+
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="dom2Prev" type="button">Back</button>
+          <button class="btn primary" id="dom2Next" type="button">Next</button>
+          <button class="btn ghost" id="dom2Play" type="button">Play</button>
+          <button class="btn ghost" id="dom2Reset" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div class="factor-stage">
+        <div class="factor-row mono">
+          Denominator:
+          <span id="dom2Den" class="factor-piece">x(x − 5)(x + 1)</span>
+        </div>
+
+        <div class="factor-row mono">
+          Set each factor = 0:
+          <span id="dom2Solve" class="factor-piece">
+            x = 0, &nbsp; x = 5, &nbsp; x = −1
+          </span>
+        </div>
+      </div>
+
+      <div class="numberline-stage">
+        <svg id="dom2Line" viewBox="0 0 700 140" width="100%" height="140" role="img" aria-label="Domain number line example 2">
+          <line x1="40" y1="70" x2="660" y2="70" class="nl-line"/>
+
+          <g class="nl-ticks">
+            <line x1="170" y1="60" x2="170" y2="80" class="nl-tick"/>
+            <text x="156" y="100" class="nl-label">-1</text>
+
+            <line x1="330" y1="60" x2="330" y2="80" class="nl-tick"/>
+            <text x="322" y="100" class="nl-label">0</text>
+
+            <line x1="540" y1="60" x2="540" y2="80" class="nl-tick"/>
+            <text x="532" y="100" class="nl-label">5</text>
+          </g>
+
+          <circle id="dom2ExA" cx="170" cy="70" r="10" class="nl-open hidden-line"/>
+          <circle id="dom2ExB" cx="330" cy="70" r="10" class="nl-open hidden-line"/>
+          <circle id="dom2ExC" cx="540" cy="70" r="10" class="nl-open hidden-line"/>
+
+          <rect id="dom2Shade1" x="40"  y="50" width="120" height="40" class="nl-shade hidden-line"/>
+          <rect id="dom2Shade2" x="180" y="50" width="140" height="40" class="nl-shade hidden-line"/>
+          <rect id="dom2Shade3" x="340" y="50" width="190" height="40" class="nl-shade hidden-line"/>
+          <rect id="dom2Shade4" x="550" y="50" width="110" height="40" class="nl-shade hidden-line"/>
+        </svg>
+      </div>
+
+      <div id="dom2Result" class="result-area"></div>
+    </div>
+  </section>
+
+  <!-- =========================
+       Summary
+  ========================== -->
+  <section class="topic-section">
+    <h2>Summary</h2>
+    <p>
+      The domain of a rational function is found by setting the denominator equal to zero.
+      Any solutions must be excluded. Factoring makes those restrictions obvious.
+    </p>
+  </section>
+
+  <!-- ======== TOPIC NAVIGATION (MATCHES RATIONAL PAGE) ======== -->
+  <nav class="topic-nav" aria-label="Topic navigation">
+    <button class="btn ghost nav-btn" id="prevTopicBtn" type="button">← Last Topic</button>
+
+    <div></div><!-- spacer -->
+
+    <button class="btn ghost nav-btn" id="nextTopicBtn" type="button">Next Topic →</button>
+
+    <div class="nav-select-wrap">
+      <label for="topicSelect" class="muted nav-select-label">Jump to:</label>
+      <select id="topicSelect" class="select nav-select"></select>
+    </div>
+  </nav>
+
+  <footer class="topic-footer">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </footer>
+
+  <script src="../js/domain.js"></script>
+  <script src="../js/topic-nav.js"></script>
+</body>
+</html>

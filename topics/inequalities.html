@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rational Inequalities | Math 48B Portfolio</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/inequalities.css" />
+</head>
+<body>
+
+  <header class="topic-header">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </header>
+
+  <section class="topic-hero">
+    <h1>Rational Inequalities + Sign Chart Method</h1>
+    <p class="topic-subtitle">
+      Solve rational inequalities by finding critical points, building a sign chart,
+      and choosing intervals that satisfy the inequality.
+    </p>
+  </section>
+
+  <!-- =========================
+       MASTER METHOD
+  ========================== -->
+  <section class="topic-section">
+    <h2>Sign Chart Method (Checklist)</h2>
+
+    <div class="steps-container">
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <p>Put everything on one side so you have 0 on the other.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <p>Factor numerator and denominator completely.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <p>Find critical points (zeros of numerator & denominator).</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">4</div>
+        <p>Place critical points on a number line.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">5</div>
+        <p>Test signs on each interval → build sign chart.</p>
+      </div>
+
+      <div class="step-box">
+        <div class="step-num">6</div>
+        <p>Select intervals that satisfy the inequality. Use closed/open dots correctly.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       EXAMPLE 1 (Animated)
+       (x+1)/(x-2) > 0
+       critical points: -1 (zero), 2 (undefined)
+       solution: (-∞,-1) ∪ (2,∞)
+       BOTH endpoints excluded because ">"
+  ====================================================== -->
+  <section class="topic-section">
+    <h2>Example 1 (Animated)</h2>
+
+    <div class="example-problem mono">
+      (x + 1) / (x − 2) &gt; 0
+    </div>
+
+    <div class="demo-shell">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="in1StepText">Press Next or Play to start.</div>
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="in1Prev">Back</button>
+          <button class="btn primary" id="in1Next">Next</button>
+          <button class="btn ghost" id="in1Play">Play</button>
+          <button class="btn ghost" id="in1Reset">Reset</button>
+        </div>
+      </div>
+
+      <!-- algebra panel -->
+      <div class="factor-stage">
+        <div class="factor-row mono">
+          Numerator = 0 →
+          <span id="in1Zero" class="factor-piece">x = −1</span>
+        </div>
+        <div class="factor-row mono">
+          Denominator = 0 →
+          <span id="in1Undef" class="factor-piece">x = 2</span>
+        </div>
+        <div class="factor-row mono">
+          Critical points →
+          <span id="in1Crit" class="factor-piece">−1, 2</span>
+        </div>
+      </div>
+
+      <!-- number line + sign chart -->
+      <div class="chart-stage">
+        <svg id="in1Line" viewBox="0 0 640 160" width="100%" height="160" role="img" aria-label="Number line example 1">
+          <!-- baseline -->
+          <line x1="60" y1="70" x2="580" y2="70" class="axis"/>
+
+          <!-- tick marks -->
+          <line x1="220" y1="60" x2="220" y2="80" class="tick"/>
+          <text x="208" y="105" class="label hidden-line" id="in1LabelNeg1">-1</text>
+
+          <line x1="420" y1="60" x2="420" y2="80" class="tick"/>
+          <text x="412" y="105" class="label hidden-line" id="in1Label2">2</text>
+
+          <!-- dots (BOTH OPEN because strict > 0) -->
+          <circle id="in1DotNeg1" cx="220" cy="70" r="7" class="open-dot hidden-line"/>
+          <circle id="in1Dot2" cx="420" cy="70" r="7" class="open-dot hidden-line"/>
+
+          <!-- interval highlights -->
+          <line id="in1IntA" x1="70" y1="70" x2="210" y2="70" class="interval hidden-line"/>
+          <line id="in1IntB" x1="230" y1="70" x2="410" y2="70" class="interval hidden-line"/>
+          <line id="in1IntC" x1="430" y1="70" x2="570" y2="70" class="interval hidden-line"/>
+
+          <!-- plus/minus signs -->
+          <text id="in1SignA" x="130" y="45" class="sign hidden-line">+</text>
+          <text id="in1SignB" x="320" y="45" class="sign hidden-line">−</text>
+          <text id="in1SignC" x="500" y="45" class="sign hidden-line">+</text>
+        </svg>
+
+        <div class="mini-table">
+          <div class="mini-row mono hidden-line" id="in1RowA">(-∞, -1): positive</div>
+          <div class="mini-row mono hidden-line" id="in1RowB">(-1, 2): negative</div>
+          <div class="mini-row mono hidden-line" id="in1RowC">(2, ∞): positive</div>
+        </div>
+      </div>
+
+      <div id="in1Result" class="result-area"></div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       EXAMPLE 2 (Animated)
+       (x-3)(x+2) / (x+1) ≤ 0
+       critical points: -2, -1, 3
+       signs: (-∞,-2) negative, (-2,-1) positive, (-1,3) negative, (3,∞) positive
+       solution: (-∞,-2] ∪ (-1,3]
+  ====================================================== -->
+  <section class="topic-section">
+    <h2>Example 2 (Animated)</h2>
+
+    <div class="example-problem mono">
+      (x − 3)(x + 2) / (x + 1) ≤ 0
+    </div>
+
+    <div class="demo-shell demo-shell-2">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="in2StepText">Press Next or Play to start.</div>
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="in2Prev">Back</button>
+          <button class="btn primary" id="in2Next">Next</button>
+          <button class="btn ghost" id="in2Play">Play</button>
+          <button class="btn ghost" id="in2Reset">Reset</button>
+        </div>
+      </div>
+
+      <!-- algebra panel -->
+      <div class="factor-stage">
+        <div class="factor-row mono">
+          Zeros of numerator →
+          <span id="in2Zeros" class="factor-piece">x = −2, 3</span>
+        </div>
+        <div class="factor-row mono">
+          Denominator = 0 →
+          <span id="in2Undef" class="factor-piece">x = −1</span>
+        </div>
+        <div class="factor-row mono">
+          Critical points →
+          <span id="in2Crit" class="factor-piece">−2, −1, 3</span>
+        </div>
+      </div>
+
+      <!-- number line + sign chart -->
+      <div class="chart-stage">
+        <svg id="in2Line" viewBox="0 0 640 160" width="100%" height="160" role="img" aria-label="Number line example 2">
+          <line x1="60" y1="70" x2="580" y2="70" class="axis"/>
+
+          <!-- ticks -->
+          <line x1="180" y1="60" x2="180" y2="80" class="tick"/>
+          <text x="165" y="105" class="label hidden-line" id="in2LabelNeg2">-2</text>
+
+          <line x1="320" y1="60" x2="320" y2="80" class="tick"/>
+          <text x="304" y="105" class="label hidden-line" id="in2LabelNeg1">-1</text>
+
+          <line x1="480" y1="60" x2="480" y2="80" class="tick"/>
+          <text x="472" y="105" class="label hidden-line" id="in2Label3">3</text>
+
+          <!-- dots -->
+          <circle id="in2DotNeg2" cx="180" cy="70" r="7" class="closed-dot hidden-line"/>
+          <circle id="in2DotNeg1" cx="320" cy="70" r="7" class="open-dot hidden-line"/>
+          <circle id="in2Dot3" cx="480" cy="70" r="7" class="closed-dot hidden-line"/>
+
+          <!-- interval highlights -->
+          <line id="in2IntA" x1="70" y1="70" x2="170" y2="70" class="interval hidden-line"/>
+          <line id="in2IntB" x1="190" y1="70" x2="310" y2="70" class="interval hidden-line"/>
+          <line id="in2IntC" x1="330" y1="70" x2="470" y2="70" class="interval hidden-line"/>
+          <line id="in2IntD" x1="490" y1="70" x2="570" y2="70" class="interval hidden-line"/>
+
+          <!-- signs -->
+          <text id="in2SignA" x="120" y="45" class="sign hidden-line">−</text>
+          <text id="in2SignB" x="250" y="45" class="sign hidden-line">+</text>
+          <text id="in2SignC" x="400" y="45" class="sign hidden-line">−</text>
+          <text id="in2SignD" x="530" y="45" class="sign hidden-line">+</text>
+        </svg>
+
+        <div class="mini-table">
+          <div class="mini-row mono hidden-line" id="in2RowA">(-∞, -2): negative</div>
+          <div class="mini-row mono hidden-line" id="in2RowB">(-2, -1): positive</div>
+          <div class="mini-row mono hidden-line" id="in2RowC">(-1, 3): negative</div>
+          <div class="mini-row mono hidden-line" id="in2RowD">(3, ∞): positive</div>
+        </div>
+      </div>
+
+      <div id="in2Result" class="result-area"></div>
+    </div>
+  </section>
+
+
+  <section class="topic-section">
+    <h2>Summary</h2>
+    <p>
+      Rational inequalities are solved by sign analysis on intervals.
+      Zeros may be included depending on ≥ or ≤, while denominator zeros are never included.
+    </p>
+  </section>
+
+
+  <!-- ======== TOPIC NAVIGATION (MATCHES TOPICS 1–5) ======== -->
+  <nav class="topic-nav" aria-label="Topic navigation">
+    <button class="btn ghost nav-btn" id="prevTopicBtn" type="button">← Last Topic</button>
+
+    <div></div><!-- spacer -->
+
+    <button class="btn ghost nav-btn" id="nextTopicBtn" type="button">Next Topic →</button>
+
+    <div class="nav-select-wrap">
+      <label for="topicSelect" class="muted nav-select-label">Jump to:</label>
+      <select id="topicSelect" class="select nav-select"></select>
+    </div>
+  </nav>
+
+  <footer class="topic-footer">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </footer>
+
+  <script src="../js/inequalities.js"></script>
+  <script src="../js/topic-nav.js"></script>
+</body>
+</html>

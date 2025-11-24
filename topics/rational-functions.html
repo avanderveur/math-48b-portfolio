@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rational Functions Overview | Math 48B Portfolio</title>
+
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/rational.css" />
+</head>
+
+<body>
+
+  <header class="topic-header">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </header>
+
+  <section class="topic-hero">
+    <h1>Rational Functions Overview</h1>
+    <p class="topic-subtitle">
+      Rational functions are fractions of polynomials.
+      Their graphs can have breaks, asymptotes, and holes depending on the numerator/denominator.
+    </p>
+  </section>
+
+  <!-- ======== DEFINITION ======== -->
+  <section class="topic-section">
+    <h2>Definition</h2>
+    <p>
+      A <strong>rational function</strong> is any function that can be written as:
+    </p>
+
+    <div class="definition-box">
+      <div class="formula">f(x) = P(x) / Q(x)</div>
+      where <span class="mono">P(x)</span> and <span class="mono">Q(x)</span> are polynomials and
+      <strong>Q(x) ≠ 0</strong>.
+    </div>
+
+    <p>
+      Because the denominator cannot be zero, rational functions have restricted domains
+      and special graph behavior.
+    </p>
+  </section>
+
+  <!-- ======== KEY FEATURES ======== -->
+  <section class="topic-section">
+    <h2>Key Features</h2>
+
+    <div class="steps-container">
+      <div class="step-box"><div class="step-num">1</div><p><strong>Domain restrictions:</strong> exclude denominator zeros.</p></div>
+      <div class="step-box"><div class="step-num">2</div><p><strong>Vertical asymptotes:</strong> denominator zeros that don't cancel.</p></div>
+      <div class="step-box"><div class="step-num">3</div><p><strong>Holes:</strong> canceled factors create removable discontinuities.</p></div>
+      <div class="step-box"><div class="step-num">4</div><p><strong>Horizontal/slant asymptotes:</strong> end behavior from degree.</p></div>
+      <div class="step-box"><div class="step-num">5</div><p><strong>x-intercepts:</strong> simplified numerator = 0.</p></div>
+      <div class="step-box"><div class="step-num">6</div><p><strong>y-intercept:</strong> evaluate f(0) if defined.</p></div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       EXAMPLE 1 (ANIMATED)
+       ===================================================== -->
+  <section class="topic-section">
+    <h2>Example 1 (Animated) — Basic Rational Function</h2>
+    <p class="example-instruction">
+      Analyze step-by-step and watch the graph build.
+    </p>
+
+    <div class="example-problem mono">
+      f(x) = (x + 1) / (x − 2)
+    </div>
+
+    <div class="demo-shell">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="rf1StepText">
+          Press Next or Play to begin the analysis.
+        </div>
+
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="rf1Prev" type="button">Back</button>
+          <button class="btn primary" id="rf1Next" type="button">Next</button>
+          <button class="btn ghost" id="rf1Play" type="button">Play</button>
+          <button class="btn ghost" id="rf1Reset" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div class="graph-stage">
+        <svg id="rf1Graph" viewBox="0 0 600 260" width="100%" height="260" role="img"
+             aria-label="Rational function graph 1 animation">
+
+          <!-- grid injected by JS -->
+
+          <!-- axes -->
+          <line x1="0" y1="130" x2="600" y2="130" class="axis"/>
+          <line x1="300" y1="0" x2="300" y2="260" class="axis"/>
+
+          <!-- VA + HA (positions set by JS) -->
+          <line id="rf1Va" class="asymptote hidden-line"/>
+          <text id="rf1VaLabel" class="label hidden-line">x = 2</text>
+
+          <line id="rf1Ha" class="asymptote hidden-line"/>
+          <text id="rf1HaLabel" class="label hidden-line">y = 1</text>
+
+          <!-- branches (actual function sampled by JS) -->
+          <path id="rf1Left"  class="branch hidden-line"/>
+          <path id="rf1Right" class="branch hidden-line"/>
+
+          <!-- intercept points (positions set by JS) -->
+          <circle id="rf1Xint" r="6" class="point hidden-line"/>
+          <circle id="rf1Yint" r="6" class="point hidden-line"/>
+        </svg>
+      </div>
+
+      <div id="rf1Result" class="result-area"></div>
+    </div>
+  </section>
+
+  <!-- =====================================================
+       EXAMPLE 2 (ANIMATED — HOLE + ASYMPTOTES)
+       ===================================================== -->
+  <section class="topic-section">
+    <h2>Example 2 (Animated) — Rational Function with a Hole</h2>
+    <p class="example-instruction">
+      This one includes factoring, cancellation, a hole, a vertical asymptote, and end behavior.
+    </p>
+
+    <div class="example-problem mono">
+      g(x) = (x² − 9) / (x² − 3x)
+    </div>
+
+    <div class="demo-shell demo-shell-2">
+
+      <div class="stepper-ui">
+        <div class="step-text" id="rf2StepText">
+          Press Next or Play to begin the analysis.
+        </div>
+
+        <div class="stepper-buttons">
+          <button class="btn ghost" id="rf2Prev" type="button">Back</button>
+          <button class="btn primary" id="rf2Next" type="button">Next</button>
+          <button class="btn ghost" id="rf2Play" type="button">Play</button>
+          <button class="btn ghost" id="rf2Reset" type="button">Reset</button>
+        </div>
+      </div>
+
+      <!-- factoring/cancel visual line -->
+      <div class="cancel-stage" aria-live="polite">
+        <div class="cancel-row">
+          <span id="rf2NumFact" class="cancel-piece hidden-line mono">
+            (x − 3)(x + 3)
+          </span>
+          <span class="mono"> / </span>
+          <span id="rf2DenFact" class="cancel-piece hidden-line mono">
+            x(x − 3)
+          </span>
+        </div>
+
+        <div id="rf2CancelNote" class="cancel-note hidden-line">
+          Cancel common factor <span class="mono">(x − 3)</span>
+        </div>
+
+        <div id="rf2Simplified" class="cancel-row hidden-line mono">
+          g(x) = (x + 3) / x
+        </div>
+      </div>
+
+      <div class="graph-stage">
+        <svg id="rf2Graph" viewBox="0 0 600 260" width="100%" height="260" role="img"
+             aria-label="Rational function graph 2 animation">
+
+          <!-- grid injected by JS -->
+
+          <!-- axes -->
+          <line x1="0" y1="130" x2="600" y2="130" class="axis"/>
+          <line x1="300" y1="0" x2="300" y2="260" class="axis"/>
+
+          <!-- VA + HA (positions set by JS) -->
+          <line id="rf2Va" class="asymptote hidden-line"/>
+          <text id="rf2VaLabel" class="label hidden-line">x = 0</text>
+
+          <line id="rf2Ha" class="asymptote hidden-line"/>
+          <text id="rf2HaLabel" class="label hidden-line">y = 1</text>
+
+          <!-- hole -->
+          <circle id="rf2Hole" r="7" class="hole hidden-line"/>
+          <circle id="rf2HoleInner" r="4" class="hole-inner hidden-line"/>
+          <text id="rf2HoleLabel" class="label hidden-line">(3, 2)</text>
+
+          <!-- branches (actual function sampled by JS) -->
+          <path id="rf2Left"  class="branch hidden-line"/>
+          <path id="rf2Right" class="branch hidden-line"/>
+
+          <!-- x-intercept -->
+          <circle id="rf2Xint" r="6" class="point hidden-line"/>
+          <text id="rf2XintLabel" class="label hidden-line">x = −3</text>
+        </svg>
+      </div>
+
+      <div id="rf2Result" class="result-area"></div>
+    </div>
+  </section>
+
+  <!-- ======== SUMMARY ======== -->
+  <section class="topic-section">
+    <h2>Summary</h2>
+    <p>
+      Rational functions are polynomial fractions with restricted domains.
+      Their graphs are shaped by intercepts, asymptotes, and holes.
+      A full analysis always starts with factoring and simplifying.
+    </p>
+  </section>
+
+  <!-- ======== TOPIC NAVIGATION (MATCHES SYNTHETIC DIVISION) ======== -->
+  <nav class="topic-nav" aria-label="Topic navigation">
+    <button class="btn ghost nav-btn" id="prevTopicBtn" type="button">← Last Topic</button>
+
+    <div></div><!-- spacer to keep grid balanced -->
+
+    <button class="btn ghost nav-btn" id="nextTopicBtn" type="button">Next Topic →</button>
+
+    <div class="nav-select-wrap">
+      <label for="topicSelect" class="muted nav-select-label">Jump to:</label>
+      <select id="topicSelect" class="select nav-select"></select>
+    </div>
+  </nav>
+
+  <footer class="topic-footer">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </footer>
+
+  <!-- Page JS -->
+  <script src="../js/rational-functions.js"></script>
+
+  <!-- Topic navigation JS -->
+  <script src="../js/topic-nav.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synthetic Division | Math 48B Portfolio</title>
+
+  <!-- KaTeX: math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body,{
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '\\(', right: '\\)', display: false}
+      ]
+    });">
+  </script>
+
+  <!-- correct paths from /topics folder -->
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/synthetic.css" />
+</head>
+
+<body>
+
+  <!-- ======== TOP BACK LINK ======== -->
+  <header class="topic-header">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </header>
+
+  <!-- ======== HERO ======== -->
+  <section class="topic-hero">
+    <h1>Synthetic Division</h1>
+    <p class="topic-subtitle">
+      A shortcut for dividing polynomials when the divisor is linear,
+      in the form <strong>\((x - c)\)</strong>.
+    </p>
+  </section>
+
+  <!-- ======== WHAT IT IS ======== -->
+  <section class="topic-section">
+    <h2>What Is Synthetic Division?</h2>
+    <p>
+      Synthetic division is a faster alternative to polynomial long division.
+      We only use coefficients and repeat a cycle of
+      <strong>bring down → multiply → add</strong>.
+      The last value is the remainder.
+    </p>
+
+    <div class="definition-box">
+      You can use synthetic division when the divisor looks like:
+      <div class="formula">$$x - c$$</div>
+      (If it’s \((x + 4)\), then \(c = -4\).)
+    </div>
+  </section>
+
+  <!-- ======== STEPS ======== -->
+  <section class="topic-section">
+    <h2>Steps for Synthetic Division</h2>
+
+    <div class="steps-container">
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <p>Write coefficients in descending powers. Use 0 for missing terms.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <p>Identify \(c\) from the divisor \((x - c)\).</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <p>Bring down the first coefficient to the bottom row.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">4</div>
+        <p>Multiply that number by \(c\) and write it in the middle row.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">5</div>
+        <p>Add the column.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">6</div>
+        <p>Repeat multiply + add until the final column.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======== ANIMATED DEMO ======== -->
+  <section class="topic-section">
+    <h2>Animated Example (Step-by-Step)</h2>
+    <p class="example-instruction">
+      Choose an example and press Play. You can also click Next/Back.
+    </p>
+
+    <div class="demo-shell">
+
+      <div class="demo-head">
+        <div>
+          <h3>Interactive Synthetic Division</h3>
+          <p class="muted">Watch the coefficients drop in like real synthetic division.</p>
+        </div>
+
+        <div class="demo-controls-top">
+          <label for="exampleSelect" class="muted">Example:</label>
+          <select id="exampleSelect" class="select"></select>
+        </div>
+      </div>
+
+      <div class="synthetic-wrap">
+        <table id="syntheticTable" class="synthetic-table" aria-label="Synthetic division table"></table>
+      </div>
+
+      <div class="stepper-ui">
+        <div
+          class="step-text"
+          id="stepText"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          Press “Play” or “Next” to begin.
+        </div>
+
+        <div class="stepper-buttons">
+          <button id="prevBtn" class="btn ghost" type="button">Back</button>
+          <button id="nextBtn" class="btn primary" type="button">Next</button>
+          <button id="playBtn" class="btn ghost" type="button">Play</button>
+          <button id="resetBtn" class="btn ghost" type="button">Reset</button>
+        </div>
+
+        <div
+          id="resultText"
+          class="result-area"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======== INTERPRETATION ======== -->
+  <section class="topic-section">
+    <h2>How to Read the Final Row</h2>
+    <p>
+      The bottom row gives the <strong>quotient coefficients</strong>.
+      The last number is the <strong>remainder</strong>.
+    </p>
+
+    <div class="definition-box">
+      If the final row reads:
+      <div class="formula">$$a,\; b,\; c,\; r$$</div>
+      then the quotient is:
+      <div class="formula">$$ax^2 + bx + c$$</div>
+      and the remainder is:
+      <div class="formula">$$r$$</div>
+    </div>
+  </section>
+
+  <!-- ======== TOPIC NAVIGATION (Option A: no Home button here) ======== -->
+  <nav class="topic-nav" aria-label="Topic navigation">
+    <button class="btn ghost nav-btn" id="prevTopicBtn" type="button">← Last Topic</button>
+
+    <div></div><!-- spacer to keep grid balanced -->
+
+    <button class="btn ghost nav-btn" id="nextTopicBtn" type="button">Next Topic →</button>
+
+    <div class="nav-select-wrap">
+      <label for="topicSelect" class="muted nav-select-label">Jump to:</label>
+      <select id="topicSelect" class="select nav-select"></select>
+    </div>
+  </nav>
+
+  <!-- ======== FOOTER ======== -->
+  <footer class="topic-footer">
+    <a class="back-link" href="../index.html">← Back to Home</a>
+  </footer>
+
+  <!-- Page JS -->
+  <script src="../js/synthetic-division.js" defer></script>
+
+  <!-- Topic navigation JS -->
+  <script src="../js/topic-nav.js" defer></script>
+
+</body>
+</html>

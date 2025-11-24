@@ -1,0 +1,193 @@
+/* =========================================================
+   rational.css — animations + formatting for rational examples
+   (Matching global theme + synthetic page)
+   ========================================================= */
+
+.demo-shell{
+  margin-top:18px;
+  background: var(--card);
+  border:1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding:18px;
+  box-shadow: var(--shadow-soft);
+}
+
+.demo-shell-2{
+  margin-top:22px;
+}
+
+.graph-stage{
+  margin-top:16px;
+  background: var(--bg-soft);
+  border:1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  padding:12px;
+}
+
+/* Axes */
+.axis{
+  stroke: rgba(255,255,255,0.30);
+  stroke-width: 2;
+}
+
+/* Grid (school graph vibe) */
+.grid-minor{
+  stroke: rgba(255,255,255,0.08);
+  stroke-width: 1;
+}
+.grid-major{
+  stroke: rgba(255,255,255,0.18);
+  stroke-width: 1.4;
+}
+
+/* Asymptotes */
+.asymptote{
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-dasharray: 7 7;
+  filter: drop-shadow(0 0 6px rgba(57,230,215,0.4));
+  opacity: 0;
+}
+
+/* Curves */
+.branch{
+  stroke: white;
+  stroke-width: 3.1;
+  fill: none;
+  opacity: 0;
+}
+
+/* Points */
+.point{
+  fill: var(--accent-2);
+  stroke: white;
+  stroke-width: 1.6;
+  opacity: 0;
+}
+
+/* Labels */
+.label{
+  fill: var(--accent);
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 800;
+  opacity: 0;
+}
+
+/* Hole styling */
+.hole{
+  stroke: var(--accent);
+  stroke-width: 2.2;
+  fill: transparent;
+  opacity: 0;
+}
+.hole-inner{
+  fill: var(--card);
+  stroke: none;
+  opacity: 0;
+}
+
+/* Reveal animations */
+.hidden-line{
+  opacity: 0;
+  transform: translateY(6px);
+}
+.shown-line{
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+/* Factor + cancellation area */
+.cancel-stage{
+  margin-top:12px;
+  padding:12px;
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  border:1px dotted var(--line);
+}
+
+.cancel-row{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  font-size: 20px;
+  margin-bottom:10px;
+}
+
+.cancel-piece{
+  font-size: 22px;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.cancel-note{
+  text-align:center;
+  font-size: 16px;
+  margin-top:6px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-weight: 700;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+
+.strike{
+  position: relative;
+}
+.strike::after{
+  content:"";
+  position:absolute;
+  left:-4px;
+  right:-4px;
+  top:50%;
+  height:3px;
+  background: crimson;
+  transform: scaleX(0);
+  transform-origin:left;
+  transition:0.35s ease;
+}
+.strike.animate::after{
+  transform: scaleX(1);
+}
+
+/* Simplified form */
+#rf2Simplified{
+  font-size:22px;
+  opacity:0;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+/* Stepper area */
+.stepper-ui{
+  margin-top:14px;
+  display:grid;
+  gap:10px;
+  margin-bottom: 10px;
+}
+
+.step-text{
+  background: var(--bg-soft);
+  border:1px solid var(--line);
+  padding:12px 14px;
+  border-radius:12px;
+  font-weight:800;
+  color: var(--text);
+  min-height: 52px;
+}
+
+.stepper-buttons{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+}
+
+.result-area{
+  background: var(--bg-soft);
+  border:1px solid var(--line);
+  padding:12px 14px;
+  border-radius:12px;
+  font-size:1.02rem;
+  line-height:1.5;
+}

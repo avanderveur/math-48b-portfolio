@@ -1,0 +1,207 @@
+/* =========================================================
+   inverses.css — Inverse Functions + Reflection Topic
+   Matches global theme and Topics 1–8 styles
+   ========================================================= */
+
+/* ------------------------------
+   Demo Shell
+------------------------------ */
+.demo-shell {
+  margin-top: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.demo-shell-2 {
+  margin-top: 28px;
+}
+
+/* ------------------------------
+   Definition Box
+------------------------------ */
+.definition-box {
+  margin: 14px auto 8px;
+  padding: 12px 16px;
+  max-width: 520px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+}
+
+/* ------------------------------
+   Algebra Stage
+------------------------------ */
+.factor-stage {
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--bg-soft);
+  border: 1px dotted var(--line);
+  border-radius: var(--radius-lg);
+}
+
+.factor-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+  margin: 6px 0;
+}
+
+.factor-piece {
+  font-weight: 900;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: 450ms ease;
+}
+
+.factor-piece.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ------------------------------
+   Graph Stage
+------------------------------ */
+.graph-stage {
+  margin-top: 20px;
+  padding: 16px;
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--line-strong);
+  overflow-x: auto;
+}
+
+/* Axes */
+.axis {
+  stroke: rgba(255, 255, 255, 0.6);
+  stroke-width: 3;
+}
+
+/* Reflection line y=x */
+.ref-line {
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-dasharray: 6 8;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.ref-line.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Labels */
+.label {
+  fill: var(--accent);
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 800;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.label.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Curve Styles */
+.curve {
+  fill: none;
+  stroke-width: 3;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.curve.show {
+  opacity: 1;
+}
+
+/* Original function curve (blue-white) */
+.f-curve {
+  stroke: #6fb8ff;
+}
+
+/* Inverse curve (purple-white) */
+.inv-curve {
+  stroke: #ff8dff;
+}
+
+/* Points */
+.point {
+  fill: var(--accent);
+  opacity: 0;
+  transform: scale(0.7);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.point.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Inverse reflected point */
+.ref-point {
+  fill: #ff8dff;
+}
+
+/* ------------------------------
+   Stepper UI
+------------------------------ */
+.stepper-ui {
+  margin-bottom: 14px;
+}
+
+.step-text {
+  font-size: 16px;
+  padding: 12px;
+  min-height: 52px;
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+}
+
+.stepper-buttons {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* ------------------------------
+   Result Box
+------------------------------ */
+.result-area {
+  margin-top: 18px;
+  padding: 14px;
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ------------------------------
+   Hidden/Shown line system
+------------------------------ */
+.hidden-line {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.shown-line {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}

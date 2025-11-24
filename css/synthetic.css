@@ -1,0 +1,182 @@
+/* =========================================================
+   synthetic.css — ONLY for synthetic-division.html
+   ========================================================= */
+
+/* =========================================================
+   CONTAINER + LAYOUT
+   ========================================================= */
+
+.demo-shell{
+  margin-top: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 22px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* header of demo */
+.demo-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.demo-head h3{
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 900;
+}
+.demo-head .muted{
+  margin-top: 2px;
+}
+
+/* fix dropdown conflict with global .select */
+.demo-controls-top .select{
+  background: var(--card-2) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: 10px 12px !important;
+  border: 1px solid var(--line-strong) !important;
+}
+
+/* =========================================================
+   TABLE WRAPPER
+   ========================================================= */
+
+.synthetic-wrap{
+  overflow-x: auto;
+  padding: 14px;
+  background: var(--bg-soft);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+}
+
+/* =========================================================
+   SYNTHETIC DIVISION TABLE
+   ========================================================= */
+
+.synthetic-table{
+  width: max-content;
+  min-width: 620px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 auto;
+  font-family: var(--mono);
+  font-size: 1.10rem;
+}
+
+/* all cells */
+.synthetic-table td{
+  padding: 14px 16px;
+  text-align: center;
+  min-width: 70px;
+  border-right: 1px solid var(--line);
+  color: var(--text);
+  position: relative;
+  transition: 250ms ease;
+}
+
+/* left border cell (the c-value area) */
+.synthetic-table tr td:first-child{
+  border-right: 3px solid var(--accent);
+  min-width: 64px;
+  font-weight: 900;
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(57,230,215,0.4);
+}
+
+/* top coefficients */
+.synthetic-table tr.coeff-row td{
+  background: rgba(255,255,255,0.03);
+  border-bottom: 2px solid var(--line-strong);
+  font-weight: 900;
+}
+
+/* multiplication row */
+.synthetic-table tr.mul-row td{
+  background: rgba(57,168,255,0.07);
+  color: #d8edff;
+  border-bottom: 1px solid var(--line);
+}
+
+/* sum / final row */
+.synthetic-table tr.sum-row td{
+  background: rgba(57,230,215,0.10);
+  font-weight: 900;
+}
+
+/* arc lines between rows */
+.synthetic-table tr.mul-row td:not(:first-child)::after{
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 60%;
+  height: 6px;
+  border-top: 2px solid rgba(57,230,215,0.25);
+  transform: translateX(-50%);
+}
+
+/* =========================================================
+   ANIMATION STATES
+   ========================================================= */
+
+.hidden{
+  opacity: 0.05;
+  filter: blur(2px);
+  transform: translateY(6px);
+}
+
+.shown{
+  opacity: 1;
+  filter: none;
+  transform: none;
+}
+
+.active{
+  outline: 2px solid var(--accent);
+  box-shadow: var(--shadow-glow);
+  border-radius: 10px;
+}
+
+/* =========================================================
+   STEPPER UI
+   ========================================================= */
+
+.stepper-ui{
+  margin-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.step-text{
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  padding: 12px 16px;
+  border-radius: var(--radius-lg);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.stepper-buttons{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.result-area{
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  padding: 12px 16px;
+  border-radius: var(--radius-lg);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.remainder{
+  color: var(--accent);
+  font-weight: 900;
+}

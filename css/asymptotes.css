@@ -1,0 +1,128 @@
+/* =========================================================
+   asymptotes.css — matches Topics 1–3 formatting + real graphs
+   ========================================================= */
+
+.demo-shell {
+  margin-top: 14px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+.demo-shell-2 { margin-top: 22px; }
+
+.graph-stage {
+  margin-top: 16px;
+  background: var(--bg-soft);
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius-lg);
+  padding: 12px;
+}
+
+/* ===== GRID (same vibe as your Graphing topic) ===== */
+.grid-minor {
+  stroke: rgba(255,255,255,0.06);
+  stroke-width: 1;
+}
+.grid-major {
+  stroke: rgba(255,255,255,0.12);
+  stroke-width: 1.4;
+}
+
+/* axes */
+.axis {
+  stroke: rgba(255, 255, 255, 0.30);
+  stroke-width: 2.5;
+}
+
+/* asymptotes */
+.asymptote {
+  stroke: var(--accent);
+  stroke-width: 2.7;
+  stroke-dasharray: 8 7;
+  filter: drop-shadow(0 0 6px rgba(57,230,215,0.4));
+  opacity: 0;
+}
+
+.label {
+  fill: var(--accent);
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 800;
+  opacity: 0;
+}
+
+/* branches */
+.branch {
+  stroke: white;
+  stroke-width: 3.1;
+  fill: none;
+  opacity: 0;
+}
+
+/* shared reveal system (same as Topics 1–3) */
+.hidden-line {
+  opacity: 0;
+  transform: translateY(6px);
+}
+.shown-line {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+/* factoring stage (same as Topics 2–3) */
+.factor-stage {
+  margin-top: 8px;
+  padding: 12px;
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  border: 1px dotted var(--line);
+}
+.factor-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.factor-piece {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: 0.5s ease;
+}
+.factor-piece.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stepper */
+.stepper-ui { margin-bottom: 16px; }
+.step-text {
+  font-size: 16px;
+  padding: 12px;
+  background: var(--bg-soft);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  min-height: 52px;
+}
+.stepper-buttons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.result-area {
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  font-size: 15px;
+  line-height: 1.5;
+}

@@ -7,6 +7,16 @@
 
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/inequalities.css" />
+
+  <!-- MathJax for nicely typeset math -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 
@@ -41,7 +51,7 @@
 
       <div class="step-box">
         <div class="step-num">3</div>
-        <p>Find critical points (zeros of numerator & denominator).</p>
+        <p>Find critical points (zeros of numerator &amp; denominator).</p>
       </div>
 
       <div class="step-box">
@@ -65,15 +75,12 @@
   <!-- =====================================================
        EXAMPLE 1 (Animated)
        (x+1)/(x-2) > 0
-       critical points: -1 (zero), 2 (undefined)
-       solution: (-∞,-1) ∪ (2,∞)
-       BOTH endpoints excluded because ">"
   ====================================================== -->
   <section class="topic-section">
     <h2>Example 1 (Animated)</h2>
 
     <div class="example-problem mono">
-      (x + 1) / (x − 2) &gt; 0
+      <span class="math">\( \dfrac{x+1}{x-2} &gt; 0 \)</span>
     </div>
 
     <div class="demo-shell">
@@ -92,15 +99,15 @@
       <div class="factor-stage">
         <div class="factor-row mono">
           Numerator = 0 →
-          <span id="in1Zero" class="factor-piece">x = −1</span>
+          <span id="in1Zero" class="factor-piece math">\( x = -1 \)</span>
         </div>
         <div class="factor-row mono">
           Denominator = 0 →
-          <span id="in1Undef" class="factor-piece">x = 2</span>
+          <span id="in1Undef" class="factor-piece math">\( x = 2 \)</span>
         </div>
         <div class="factor-row mono">
           Critical points →
-          <span id="in1Crit" class="factor-piece">−1, 2</span>
+          <span id="in1Crit" class="factor-piece math">\( -1, 2 \)</span>
         </div>
       </div>
 
@@ -146,16 +153,13 @@
 
   <!-- =====================================================
        EXAMPLE 2 (Animated)
-       (x-3)(x+2) / (x+1) ≤ 0
-       critical points: -2, -1, 3
-       signs: (-∞,-2) negative, (-2,-1) positive, (-1,3) negative, (3,∞) positive
-       solution: (-∞,-2] ∪ (-1,3]
+       (x-3)(x+2)/(x+1) ≤ 0
   ====================================================== -->
   <section class="topic-section">
     <h2>Example 2 (Animated)</h2>
 
     <div class="example-problem mono">
-      (x − 3)(x + 2) / (x + 1) ≤ 0
+      <span class="math">\( \dfrac{(x-3)(x+2)}{x+1} \le 0 \)</span>
     </div>
 
     <div class="demo-shell demo-shell-2">
@@ -174,15 +178,15 @@
       <div class="factor-stage">
         <div class="factor-row mono">
           Zeros of numerator →
-          <span id="in2Zeros" class="factor-piece">x = −2, 3</span>
+          <span id="in2Zeros" class="factor-piece math">\( x = -2, 3 \)</span>
         </div>
         <div class="factor-row mono">
           Denominator = 0 →
-          <span id="in2Undef" class="factor-piece">x = −1</span>
+          <span id="in2Undef" class="factor-piece math">\( x = -1 \)</span>
         </div>
         <div class="factor-row mono">
           Critical points →
-          <span id="in2Crit" class="factor-piece">−2, −1, 3</span>
+          <span id="in2Crit" class="factor-piece math">\( -2, -1, 3 \)</span>
         </div>
       </div>
 

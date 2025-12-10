@@ -7,6 +7,9 @@
 
   <link rel="stylesheet" href="../css/styles.css" />
   <link rel="stylesheet" href="../css/rational.css" />
+
+  <!-- MathJax for nice equation rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -31,9 +34,13 @@
     </p>
 
     <div class="definition-box">
-      <div class="formula">f(x) = P(x) / Q(x)</div>
+      <div class="formula mono">
+        \[
+          f(x) = \frac{P(x)}{Q(x)}
+        \]
+      </div>
       where <span class="mono">P(x)</span> and <span class="mono">Q(x)</span> are polynomials and
-      <strong>Q(x) ≠ 0</strong>.
+      <strong>Q(x) \neq 0</strong>.
     </div>
 
     <p>
@@ -47,12 +54,30 @@
     <h2>Key Features</h2>
 
     <div class="steps-container">
-      <div class="step-box"><div class="step-num">1</div><p><strong>Domain restrictions:</strong> exclude denominator zeros.</p></div>
-      <div class="step-box"><div class="step-num">2</div><p><strong>Vertical asymptotes:</strong> denominator zeros that don't cancel.</p></div>
-      <div class="step-box"><div class="step-num">3</div><p><strong>Holes:</strong> canceled factors create removable discontinuities.</p></div>
-      <div class="step-box"><div class="step-num">4</div><p><strong>Horizontal/slant asymptotes:</strong> end behavior from degree.</p></div>
-      <div class="step-box"><div class="step-num">5</div><p><strong>x-intercepts:</strong> simplified numerator = 0.</p></div>
-      <div class="step-box"><div class="step-num">6</div><p><strong>y-intercept:</strong> evaluate f(0) if defined.</p></div>
+      <div class="step-box">
+        <div class="step-num">1</div>
+        <p><strong>Domain restrictions:</strong> exclude values that make the denominator zero.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2</div>
+        <p><strong>Vertical asymptotes:</strong> denominator zeros that don't cancel.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3</div>
+        <p><strong>Holes:</strong> canceled factors create removable discontinuities.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">4</div>
+        <p><strong>Horizontal/slant asymptotes:</strong> end behavior from degree.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">5</div>
+        <p><strong>x-intercepts:</strong> set the simplified numerator equal to 0.</p>
+      </div>
+      <div class="step-box">
+        <div class="step-num">6</div>
+        <p><strong>y-intercept:</strong> evaluate \( f(0) \) if defined.</p>
+      </div>
     </div>
   </section>
 
@@ -66,7 +91,9 @@
     </p>
 
     <div class="example-problem mono">
-      f(x) = (x + 1) / (x − 2)
+      \[
+        f(x) = \frac{x + 1}{x - 2}
+      \]
     </div>
 
     <div class="demo-shell">
@@ -125,7 +152,9 @@
     </p>
 
     <div class="example-problem mono">
-      g(x) = (x² − 9) / (x² − 3x)
+      \[
+        g(x) = \frac{x^2 - 9}{x^2 - 3x}
+      \]
     </div>
 
     <div class="demo-shell demo-shell-2">
@@ -147,11 +176,7 @@
       <div class="cancel-stage" aria-live="polite">
         <div class="cancel-row">
           <span id="rf2NumFact" class="cancel-piece hidden-line mono">
-            (x − 3)(x + 3)
-          </span>
-          <span class="mono"> / </span>
-          <span id="rf2DenFact" class="cancel-piece hidden-line mono">
-            x(x − 3)
+            \( \dfrac{(x - 3)(x + 3)}{x(x - 3)} \)
           </span>
         </div>
 
@@ -160,7 +185,7 @@
         </div>
 
         <div id="rf2Simplified" class="cancel-row hidden-line mono">
-          g(x) = (x + 3) / x
+          \( g(x) = \dfrac{x + 3}{x} \)
         </div>
       </div>
 
